@@ -549,6 +549,7 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \renewcommand{\arraystretch}{0.9} % Reduce rows height
+  \vspace{-2mm}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3cm - 0.5cm} R{3cm} C{0.5cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
