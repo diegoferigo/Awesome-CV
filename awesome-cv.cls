@@ -501,7 +501,7 @@
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \color{lightgray}\vhrulefill{0.6pt}
 }
 
 % Define a subsection for CV
@@ -536,10 +536,10 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm-0.5cm} C{0.5cm}}
     \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}\ #4}  & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}} \\}
+      {\entrypositionstyle{#1} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}\ #4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} & \entrylocationstyle{\faMapMarker}\\
       \entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
-      \multicolumn{3}{L{\textwidth}}{\descriptionstyle{#5}}
+    \multicolumn{3}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
 
@@ -551,12 +551,11 @@
   \renewcommand{\arraystretch}{0.9} % Reduce rows height
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3cm - 0.5cm} R{3cm} C{0.5cm}}
     \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}} \\}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} & \entrylocationstyle{\faMapMarker} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
   \end{tabular*}%
 }
-
 
 % Define an entry for publications
 % Usage: \cvpublication{<position>}{<title>}{<location>}{<date>}
@@ -603,7 +602,7 @@
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.5cm - 0.5cm} R{3cm} C{0.5cm}}
-  }{%
+}{%
     \end{tabular*}
   \end{center}
 }
@@ -611,7 +610,7 @@
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} & \honorlocationstyle{\faMapMarker} \\
+  \honordatestyle{#4} & \honorpositionstyle{#1} \honortitlestyle{#2} & \honorlocationstyle{#3} & \honorlocationstyle{\faMapMarker} \\
 }
 
 % Define an environment for cvskill
@@ -625,6 +624,7 @@
     \end{tabular*}
   \end{center}
 }
+
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
