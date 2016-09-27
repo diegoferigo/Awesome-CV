@@ -528,17 +528,47 @@
 }{%
   \end{center}
 }
+
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm-0.5cm} C{0.5cm}}
     \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+      {\entrypositionstyle{#1} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}\ #4}  & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} & \entrylocationstyle{\faMapMarker}\\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
+      \multicolumn{3}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+
+% Define an entry of cv information w/o description field
+% Usage: \cventrynodesc{<position>}{<title>}{<location>}{<date>}
+\newcommand*{\cventrynodesc}[4]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \renewcommand{\arraystretch}{0.9} % Reduce rows height
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3cm - 0.5cm} R{3cm} C{0.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} & \entrylocationstyle{\faMapMarker} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} & \entrydatestyle{\raisebox{0.3mm}{\faCalendar}}\\}
+  \end{tabular*}%
+}
+
+
+% Define an entry for publications
+% Usage: \cvpublication{<position>}{<title>}{<location>}{<date>}
+\newcommand*{\cvpublication}[4]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \renewcommand{\arraystretch}{0.9} % Reduce rows height
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3.5cm} R{3.5cm}}
+    \ifempty{#2#3}
+    {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+    \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
   \end{tabular*}%
 }
 
@@ -572,15 +602,16 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
-}{%
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.5cm - 0.5cm} R{3cm} C{0.5cm}}
+  }{%
     \end{tabular*}
   \end{center}
 }
+
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} & \honorlocationstyle{\faMapMarker} \\
 }
 
 % Define an environment for cvskill
