@@ -9,6 +9,10 @@
 % Claud D. Park <posquit0.bj@gmail.com>
 % http://www.posquit0.com
 %
+% Edited by:
+% Diego Ferigo <dgferigo@gmail.com>
+% https://github.com/diegoferigo/Awesome-CV
+%
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 %
@@ -21,7 +25,8 @@
 \documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+% Override defaults
+%\geometry{left=2cm, top=1.5cm, right=2cm, bottom=2cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -43,43 +48,45 @@
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
 
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+% If you would like to change the social information separator
+%\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}   % pipe (|)
+\renewcommand{\acvHeaderSocialSep}{\quad\quad·\quad\quad} % dot  (·)
 
+% Spacing customization
+%\renewcommand{\acvSectionTopSkip}{0mm}
+%\renewcommand{\acvSectionContentTopSkip}{0mm}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
-\name{Claud D.}{Park}
-\position{Software Engineer{\enskip\cdotp\enskip}Security Expert}
-\address{246-1002, Gwangmyeongmayrouge Apt. 86, Cheongna lime-ro, Seo-gu, Incheon-si, 404-180, Rep. of KOREA}
-
-\mobile{(+82) 10-9030-1843} 
-\email{posquit0.bj@gmail.com}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+\name{Diego}{Ferigo}
+\position{\{Electronic{\enskip\cdotp\enskip}Robotics{\enskip\cdotp\enskip}Machine Learning\} Engineer}
+\address{Via del Cotonificio 187, Udine, ITALY}
+\mobile{(+39) 320-1596323}
+\email{dgferigo@gmail.com}
+%\homepage{www.posquit0.com}
+\github{diegoferigo}
+\linkedin{diegoferigo}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
 % \skype{skype-id}
 % \reddit{reddit-id}
-% \extrainfo{extra informations}
-
-\quote{``Must be the change that you want to see in the world."}
+% \extrainfo{extra information}
+\quote{{\color{awesome}\LARGE\raisebox{-1mm}{``}}Machines are so stupid that, if you tell them to do something perfect, they'll do it{\color{awesome}\LARGE\raisebox{-3.5mm}{"}}}
 
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
+% Print the header with above personal information
 \makecvheader
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Claud D. Park~~~·~~~Curriculum Vitae}
+  {Diego Ferigo~~~·~~~Curriculum Vitae}
   {\thepage}
 
 
